@@ -1,0 +1,1 @@
+This app reproduces routes bug: in view for Backend::Stats::HitsController.index you can't link to ArticlesController

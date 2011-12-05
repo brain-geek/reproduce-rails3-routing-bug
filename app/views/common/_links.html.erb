@@ -1,0 +1,23 @@
+<h3>Current controller: <%=params[:controller]%></h3>
+
+<%= link_to "Articles#index", '/' %> 
+<%= link_to "Articles#show", '/articles/123' %> 
+<%= link_to "Backend/stats/hits#index", '/backend/stats/hits' %> 
+
+</hr>
+<p>
+  Url with articles_path
+  <b><%= begin; articles_path; rescue; end%></b>
+</p>
+
+<% urls = [
+  {:controller => 'articles', :action => :index},
+  {:controller => '/articles', :action => :index},
+  {:controller => '/articles', :action => :show, :id => 123}
+].each do |url|%>
+  </hr>
+  <p>
+    Url <%=url.inspect %>: 
+    <b><%= begin; url_for url; rescue; 'ERROR'; end%></b>
+  </p>
+<% end %>
