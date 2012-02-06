@@ -1,4 +1,4 @@
-Rep::Application.routes.draw do
+Testapp::Application.routes.draw do
   root :to => 'articles#index'
 
   namespace :backend do
